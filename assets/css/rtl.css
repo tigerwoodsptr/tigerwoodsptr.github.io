@@ -1,0 +1,328 @@
+
+
+
+.header-button a {
+    padding: 11px 44px;
+}
+
+.hero-area .luxury-button a {
+    padding: 13px 46px;
+}
+
+.hero-area .luxury-button:before {
+    right: 123px;
+}
+
+.room-single-box {
+    text-align: right !important;
+}
+
+p.section-desc-1 {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.about-area {
+    text-align: right;
+}
+
+.about-conuter-box {
+    margin-right: 0;
+    margin-left: 59px;
+}
+
+.about-area .luxury-button:before {
+    margin: auto;
+    right: -67%;
+}
+
+.row.call-do-action-bg {
+    text-align: right;
+}
+
+.call-do-action-area .section-title {
+    margin-right: 50px;
+}
+
+.call-do-action-area p.section-desc-2 {
+    margin-left: 61px;
+}
+
+.call-do-action-text a {
+    margin-right: 50px;
+}
+
+.call-do-action-author {
+    justify-content: right;
+    padding-right: 48px;
+}
+
+.call-do-action-content p:before {
+    left: 28px;
+}
+
+.facilities-area {
+    text-align: right;
+}
+
+.facilities-area .section-title {
+    text-align: right;
+    float: left;
+}
+
+.facilities-area .luxury-button:before {
+    right: -328px;
+}
+
+.facilities-content p:before {
+    right: 0 !important;
+    left: auto;
+}
+
+.offers-area .section-title {
+    text-align: right;
+    float: left;
+}
+
+.single-testi-box {
+    text-align: right;
+}
+
+.testi-content p:before {
+    left: inherit;
+    right: 9px;
+}
+
+.testi-quote-icon {
+    left: 40px;
+    right: inherit;
+}
+
+.testi-author {
+    justify-content: right;
+}
+
+.single-blog-box {
+    text-align: right;
+}
+
+.testi-author-title p:before {
+    left: 0px;
+}
+
+
+
+/*RTL Style Responsive*/
+@media (min-width: 1400px) and (max-width: 1600px) {
+
+.facilities-content p {
+    width: 100%;
+}
+
+
+
+
+}
+
+@media (min-width: 1300px) and (max-width: 1399px) {
+.facilities-content p {
+    width: 100%;
+}
+
+.call-do-action-area p.section-desc-2 {
+    margin-left: 25px;
+}
+
+
+
+
+}
+
+
+@media (min-width: 992px) and (max-width: 1299px) {
+.facilities-content p {
+    width: 100%;
+}
+
+.call-do-action-area p.section-desc-2 {
+    margin-left: 0;
+    width: 100%;
+}
+
+
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+.facilities-content p {
+    width: 100%;
+}
+
+.call-do-action-area p.section-desc-2 {
+    margin-left: 0;
+    width: 100%;
+}
+
+.call-do-action-video {
+    left: -57px;
+}
+
+.facilities-area .section-title {
+    text-align: right;
+    float: right;
+}
+
+.facilities-area .luxury-button {
+    float: right;
+}
+
+.offers-area .section-title {
+    text-align: right;
+    float: right;
+}
+
+
+}
+
+@media (min-width: 600px) and (max-width: 767px) {
+
+p.section-desc-2 {
+    width: 100%;
+    text-align: inherit;
+}
+
+.call-do-action-video {
+    top: -9px;
+    left: 1px;
+    position: relative;
+}
+
+.facilities-area .section-title {
+    text-align: right;
+    float: right;
+}
+
+.facilities-area .luxury-button {
+    float: right;
+}
+
+.offers-area .section-title {
+    text-align: right;
+    float: right;
+}
+
+.facilities-number {
+    left: 0%;
+}
+
+.facilities-number.two {
+    left: 0;
+}
+
+
+
+
+}
+
+/*Mobile*/
+@media (min-width: 480px) and (max-width: 599px) {
+p.section-desc-2 {
+    width: 100%;
+    text-align: inherit;
+}
+
+.call-do-action-area .section-title {
+    margin-right: 5px;
+}
+
+.call-do-action-video {
+    top: -9px;
+    left: 1px;
+    position: relative;
+}
+
+.call-do-action-text a {
+    margin-right: -12px;
+}
+
+.facilities-area .section-title {
+    text-align: right;
+    float: right;
+}
+
+.facilities-area .luxury-button {
+    float: right;
+}
+
+.offers-area .section-title {
+    text-align: right;
+    float: right;
+}
+
+.facilities-number {
+    left: 0%;
+}
+
+.facilities-number.two {
+    left: 0;
+}
+
+
+
+}
+
+/*Mobile*/
+@media (min-width: 320px) and (max-width: 479px) {
+
+.hero-content h1 {
+    font-size: 30px;
+    line-height: 28px;
+}
+	
+p.section-desc-2 {
+    width: 100%;
+    text-align: inherit;
+}
+
+.call-do-action-area .section-title {
+    margin-right: 5px;
+}
+
+.call-do-action-area p.section-desc-2 {
+    margin-left: 29px;
+}
+
+.call-do-action-text a {
+    margin-right: 8px;
+}
+
+.call-do-action-video {
+    top: 26px;
+    left: 1px;
+    position: relative;
+}
+
+.facilities-area .section-title {
+    text-align: right;
+    float: right;
+}
+
+.facilities-area .luxury-button {
+    float: right;
+}
+
+.offers-area .section-title {
+    text-align: right;
+    float: right;
+}
+
+.facilities-number {
+    left: 0%;
+}
+
+.facilities-number.two {
+    left: 0;
+}
+
+
+
+}
