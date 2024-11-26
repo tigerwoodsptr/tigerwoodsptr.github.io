@@ -1,5 +1,5 @@
  /* --------------------------------------------------
-  * © Copyright 2023 - Almaris by Designesia
+  * © Copyright 2023 - https://ak2019cs.gitbook.io/aditya-kumar
   * --------------------------------------------------*/
 (function($) {
 	'use strict';
