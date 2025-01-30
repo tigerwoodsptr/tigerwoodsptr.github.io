@@ -231,114 +231,120 @@
 
             <div id="top"></div>
 
-            <section class="section-dark text-light no-top no-bottom position-relative overflow-hidden z-1000">
-                <div class="v-center">
-                    <div class="swiper">
-                      <!-- Additional required wrapper -->
-                      <div class="swiper-wrapper">
-                        <!-- Slides -->
-                        <div class="swiper-slide">
-                            <div class="swiper-inner" data-bgimage="url(images-mountain-hotel/slider/tiger2.jpg)">
-                                <div class="sw-caption z-1000">
-                                    <div class="container">
-                                        <div class="row g-4 align-items-center justify-content-center">
-
-                                            <div class="spacer-double"></div>
-
-                                            <div class="col-lg-12 text-center">     
-                                                <div class="spacer-single"></div>
-                                                <div class="sw-text-wrapper">
-                                                    <div class="slider-extra mb-4">
-                                                        <!-- <span class="d-stars">
-                                                            <i class="icofont-star"></i>
-                                                            <i class="icofont-star"></i>
-                                                            <i class="icofont-star"></i>
-                                                            <i class="icofont-star"></i>
-                                                            <i class="icofont-star"></i>
-                                                        </span> -->
+            <style>
+                /* Mobile-first approach with image switching */
+                @media (max-width: 767px) {
+                  .swiper-inner {
+                    background-size: cover !important;
+                    background-position: center center !important;
+                    height: 100vh !important;
+                  }
+                  
+                  /* Mobile-specific images */
+                  .swiper-slide:nth-child(1) .swiper-inner {
+                    background-image: url(images-mountain-hotel/slider/tiger2_resized.jpg) !important;
+                  }
+                  
+                  /* .swiper-slide:nth-child(2) .swiper-inner {
+                    background-image: url(images-mountain-hotel/slider/tiger1_resized.jpg) !important;
+                  } */
+                
+                  /* Content adjustments */
+                  .sw-caption {
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 20px;
+                  }
+                  
+                  .slider-title {
+                    font-size: 1.8rem !important;
+                    line-height: 1.2;
+                  }
+                  
+                  .slider-teaser {
+                    font-size: 0.9rem;
+                    margin-bottom: 1rem !important;
+                  }
+                  
+                  .btn-main {
+                    padding: 12px 24px;
+                    font-size: 0.9rem;
+                  }
+                  
+                  .spacer-double,
+                  .spacer-single,
+                  .spacer-30 {
+                    height: 20px !important;
+                  }
+                }
+                
+                /* Desktop styles */
+                @media (min-width: 768px) {
+                  .swiper-inner {
+                    background-size: cover;
+                    height: 100vh;
+                  }
+                }
+                </style>
+                
+                <section class="section-dark text-light no-top no-bottom position-relative overflow-hidden z-1000">
+                    <div class="v-center">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <!-- Slide 1 -->
+                                <div class="swiper-slide">
+                                    <div class="swiper-inner" data-bgimage="url(images-mountain-hotel/slider/tiger2.jpg)">
+                                        <div class="sw-caption z-1000">
+                                            <div class="container">
+                                                <div class="row g-4 align-items-center justify-content-center">
+                                                    <div class="col-lg-12 text-center">     
+                                                        <div class="sw-text-wrapper">
+                                                            <h1 class="slider-title mb-0">True Adventure Begin</h1>
+                                                        </div>
                                                     </div>
-                                                    <h1 class="slider-title mb-0">True Adventure Begin</h1>
+                                                    <div class="col-lg-6 text-center">
+                                                        <p class="slider-teaser mb-0">Discover the perfect blend of nature, and adventure at Tiger Woods. Nestled in the heart of mountain, your gateway to an unforgettable experience.</p>
+                                                        <a class="btn-main mt-3" href="rooms.html">Discover Rooms</a>
+                                                    </div>
                                                 </div>
                                             </div>
-
-                                            <div class="col-lg-6 text-center">
-                                                <p class="slider-teaser mb-0">Discover the perfect blend of nature, and adventure at Tiger Woods. Nestled in the heart of mountain, your gateway to an unforgettable experience.</p>
-                                                    <div class="spacer-30"></div>
-                                                    <a class="btn-main mb10 mb-3" href="rooms.html">Discover Rooms</a>
-                                            </div>
-
-                                            <div class="spacer-single"></div>
                                         </div>
-                                        
+                                        <div class="sw-overlay op-3"></div>
                                     </div>
                                 </div>
-                                <div class="sw-overlay op-3"></div>
-                                <!-- <img src="images-mountain-hotel/misc/leaf-rt.webp" class="w-20 abs end-0 top-0" alt=""> -->
-                                <!-- <img src="images-mountain-hotel/misc/leaf-lt.webp" class="w-20 abs start-0 top-0" alt=""> -->
+                
+                                <!-- Slide 2 -->
+                                <div class="swiper-slide">
+                                    <div class="swiper-inner" data-bgimage="url(images-mountain-hotel/slider/tiger1.jpeg)">
+                                        <div class="sw-caption z-1000">
+                                            <div class="container">
+                                                <div class="row g-4 align-items-center justify-content-center">
+                                                    <div class="col-lg-8 text-center">     
+                                                        <div class="sw-text-wrapper">
+                                                            <h1 class="slider-title mb-0">Nature's Best Escape</h1>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 text-center">
+                                                        <p class="slider-teaser mb-0">Discover the perfect blend of nature, and adventure at Tiger Woods. Nestled in the heart of Pilibhit Tiger Reserve, your gateway to an unforgettable experience.</p>
+                                                        <a class="btn-main mt-3" href="rooms.html">Discover Rooms</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sw-overlay op-3"></div>
+                                    </div>
+                                </div>
                             </div>
+                
+                            <!-- Swiper Controls -->
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
                         </div>
-                        <!-- Slides -->
-
-                        <!-- Slides -->
-                        <div class="swiper-slide">
-                            <div class="swiper-inner" data-bgimage="url(images-mountain-hotel/slider/tiger1.jpeg)">
-                                <div class="sw-caption z-1000">
-                                    <div class="container">
-                                        <div class="row g-4 align-items-center justify-content-center">
-
-                                            <div class="spacer-double"></div>
-
-                                            <div class="col-lg-8 text-center">     
-                                                <div class="spacer-single"></div>
-                                                <div class="sw-text-wrapper">
-                                                    <div class="slider-extra mb-4">
-                                                        <!-- <span class="d-stars">
-                                                            <i class="icofont-star"></i>
-                                                            <i class="icofont-star"></i>
-                                                            <i class="icofont-star"></i>
-                                                            <i class="icofont-star"></i>
-                                                            <i class="icofont-star"></i>
-                                                        </span> -->
-                                                    </div>
-                                                    <h1 class="slider-title mb-0">Nature's Best Escape</h1>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-6 text-center">
-                                                <p class="slider-teaser mb-0">Discover the perfect blend of nature, and adventure at Tiger Woods. Nestled in the heart of Pilibhit Tiger Reserve, your gateway to an unforgettable experience.</p>
-                                                    <div class="spacer-30"></div>
-                                                    <a class="btn-main mb10 mb-3" href="rooms.html">Discover Rooms</a>
-                                            </div>
-
-                                            <div class="spacer-single"></div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                                <div class="sw-overlay op-3"></div>
-                                <!-- <img src="images-mountain-hotel/misc/leaf-rt.webp" class="w-20 abs end-0 top-0" alt=""> -->
-                                <!-- <img src="images-mountain-hotel/misc/leaf-lt.webp" class="w-20 abs start-0 top-0" alt=""> -->
-                            </div>
-                        </div>                        
-                        <!-- Slides -->
-
-                        <!-- Slides -->
-                        
-                        <!-- Slides -->       
-
-                      </div>
-                      <!-- If we need pagination -->
-                      <div class="swiper-pagination"></div>
-
-                      <!-- If we need navigation buttons -->
-                      <div class="swiper-button-prev"></div>
-                      <div class="swiper-button-next"></div>
-
-                      <!-- If we need scrollbar -->
-                      <div class="swiper-scrollbar"></div>
                     </div>
-                </div>
-            </section>
+                </section>
 
             <section class="relative">
                 <div class="container">
