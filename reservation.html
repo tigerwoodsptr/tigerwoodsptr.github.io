@@ -355,7 +355,7 @@
                                         </div>
                             
                                         <div class="col-md-12">
-                                            <div class="g-recaptcha" data-sitekey="your-recaptcha-site-key"></div>
+                                            <!-- <div class="g-recaptcha" data-sitekey="your-recaptcha-site-key"></div> -->
                                             <div class="d-flex gap-3 mt-4">
                                                 <input type='submit' id='send_message' value='Submit Form' class="btn-main w-50">
                                                 <button type="button" class="btn-main w-50" onclick="sendViaWhatsApp()">
@@ -369,38 +369,76 @@
                             </div>
                             
                             <script>
-                            function sendViaWhatsApp() {
-                                const form = document.getElementById('contact_form');
-                                const roomType = form.querySelector('.room-type option:checked').textContent;
-                                
-                                const formData = {
-                                    date: form.date.value,
-                                    adults: form.adults.value,
-                                    children: form.children.value,
-                                    rooms: form.rooms.value,
-                                    room_type: roomType,
-                                    name: form.name.value,
-                                    email: form.email.value,
-                                    phone: form.phone.value,
-                                    message: form.message.value
-                                };
+                                // Form submission handler
+                                document.getElementById('contact_form').addEventListener('submit', function(e) {
+                                    e.preventDefault();
+                                    const form = this;
+                                    
+                                    // Basic validation
+                                    if (!form.checkValidity()) {
+                                        form.reportValidity();
+                                        return;
+                                    }
                             
-                                // Compose WhatsApp message
-                                let message = `*New Booking Request*%0A%0A`;
-                                message += `*Date:* ${formData.date}%0A`;
-                                message += `*Adults:* ${formData.adults}%0A`;
-                                message += `*Children:* ${formData.children}%0A`;
-                                message += `*Rooms:* ${formData.rooms}%0A`;
-                                message += `*Room Type:* ${formData.room_type}%0A`;
-                                message += `*Name:* ${formData.name}%0A`;
-                                message += `*Email:* ${formData.email}%0A`;
-                                message += `*Phone:* ${formData.phone}%0A`;
-                                message += `*Message:* ${formData.message || 'None'}`;
+                                    // Show loading state
+                                    document.getElementById('send_message').value = 'Sending...';
                             
-                                // Open WhatsApp with pre-filled message
-                                window.open(`https://wa.me/+918810051111?text=${encodeURIComponent(message)}`, '_blank');
-                            }
-                            </script>
+                                    // Send to Formspree
+                                    fetch(form.action, {
+                                        method: 'POST',
+                                        body: new FormData(form),
+                                        headers: {
+                                            'Accept': 'application/json'
+                                        }
+                                    })
+                                    .then(response => {
+                                        if (response.ok) {
+                                            document.getElementById('booking_form').style.display = 'none';
+                                            document.getElementById('success_message').style.display = 'block';
+                                        } else {
+                                            document.getElementById('error_message').style.display = 'block';
+                                        }
+                                    })
+                                    .catch(error => {
+                                        document.getElementById('error_message').style.display = 'block';
+                                    })
+                                    .finally(() => {
+                                        document.getElementById('send_message').value = 'Submit Form';
+                                    });
+                                });
+                            
+                                function sendViaWhatsApp() {
+                                    const form = document.getElementById('contact_form');
+                                    
+                                    // Validate required fields first
+                                    if (!form.checkValidity()) {
+                                        form.reportValidity();
+                                        return;
+                                    }
+                            
+                                    const roomType = form.querySelector('.room-type option:checked').textContent;
+                                    
+                                    // Create properly encoded message
+                                    const messageParts = [
+                                        '*New Booking Request*',
+                                        `*Date:* ${form.date.value}`,
+                                        `*Adults:* ${form.adults.value}`,
+                                        `*Children:* ${form.children.value}`,
+                                        `*Rooms:* ${form.rooms.value}`,
+                                        `*Room Type:* ${roomType}`,
+                                        `*Name:* ${form.name.value}`,
+                                        `*Email:* ${form.email.value}`,
+                                        `*Phone:* ${form.phone.value}`,
+                                        `*Message:* ${form.message.value || 'None'}`
+                                    ];
+                            
+                                    // Encode message properly
+                                    const encodedMessage = encodeURIComponent(messageParts.join('\n'));
+                                    
+                                    // Open WhatsApp with proper encoding
+                                    window.open(`https://wa.me/+918810051111?text=${encodedMessage}`, '_blank');
+                                }
+                                </script>
                         </div>
                     </div>
                 </div>

@@ -413,14 +413,26 @@
                                             <h3 class="mb-4">Reserve</h3>
                                         </div>
                                     </div>
-                        
+                                    
                                     <div class="row g-3">
+                                        <div class="col-md-12">
+                                            <h6 class="mb-2">Full Name</h6>
+                                            <input type="text" class="form-control" name="name" required>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h6 class="mb-2">Email</h6>
+                                            <input type="email" class="form-control" name="email" required>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h6 class="mb-2">Contact Number</h6>
+                                            <input type="tel" class="form-control" name="contact" required>
+                                        </div>
                                         <div class="col-md-12">
                                             <h6 class="mb-2">Choose Date</h6>
                                             <input type="text" id="date-picker" class="form-control no-bg bg-focus-color text-light" name="date" required>
                                         </div>
                                         <div class="col-md-6">
-                                            <div class="text-center ">
+                                            <div class="text-center">
                                                 <h6>Adult</h6>
                                                 <div class="de-number">
                                                     <span class="d-minus">-</span>
@@ -430,7 +442,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <div class="text-center ">
+                                            <div class="text-center">
                                                 <h6>Children</h6>
                                                 <div class="de-number">
                                                     <span class="d-minus">-</span>
@@ -440,7 +452,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <div class="text-center ">
+                                            <div class="text-center">
                                                 <h6>Rooms</h6>
                                                 <div class="de-number">
                                                     <span class="d-minus">-</span>
@@ -450,7 +462,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <div class="text-center ">
+                                            <div class="text-center">
                                                 <h6>Extra Beds</h6>
                                                 <div class="de-number">
                                                     <span class="d-minus">-</span>
@@ -460,12 +472,12 @@
                                             </div>
                                         </div>
                                     </div>
-                        
+                                    
                                     <div class="spacer-single"></div>
-                        
+                                    
                                     <div>
                                         <h3>Extra Services</h3>
-                                        <fieldset>                                        
+                                        <fieldset>
                                             <label>
                                                 <input type="checkbox" name="service" value="spa_services"> Spa Services 
                                             </label><br>
@@ -480,7 +492,7 @@
                                             </label>
                                         </fieldset>
                                     </div>
-                        
+                                    
                                     <div class="d-flex gap-3 mt-4">
                                         <button type="submit" class="btn-main w-100">Book Your Stay</button>
                                         <button type="button" class="btn-main w-100" onclick="sendViaWhatsApp()">
@@ -496,7 +508,9 @@
                             const form = document.getElementById('bookingForm');
                             const formData = new FormData(form);
                             
-                            // Extract values
+                            const name = formData.get('name');
+                            const email = formData.get('email');
+                            const contact = formData.get('contact');
                             const date = formData.get('date');
                             const adults = formData.get('adults');
                             const children = formData.get('children');
@@ -504,8 +518,10 @@
                             const extraBeds = formData.get('extra_beds');
                             const services = formData.getAll('service');
                         
-                            // Compose message
-                            let message = `*New Booking Request*%0A%0A`; // Using %0A for new lines
+                            let message = `*New Booking Request*%0A%0A`;
+                            message += `*Name:* ${name}%0A`;
+                            message += `*Email:* ${email}%0A`;
+                            message += `*Contact:* ${contact}%0A`;
                             message += `*Date:* ${date}%0A`;
                             message += `*Adults:* ${adults}%0A`;
                             message += `*Children:* ${children}%0A`;
@@ -513,7 +529,6 @@
                             message += `*Extra Beds:* ${extraBeds}%0A`;
                             message += `*Services:* ${services.join(', ') || 'None'}`;
                         
-                            // Send via WhatsApp
                             window.open(`https://wa.me/+918810051111?text=${message}`, '_blank');
                         }
                         </script>
