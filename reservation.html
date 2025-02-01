@@ -18,6 +18,22 @@
     <link href="css/coloring.css" rel="stylesheet" type="text/css" >
     <!-- color scheme -->
     <link id="colors" href="css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+    <!-- Enable browser caching using Cloudflare (Free CDN) -->
+    <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">
+    <style>
+    /* Inline critical CSS */
+    body { font-family: sans-serif; margin: 0; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    /* Add more critical styles here */
+    </style>
+    
+    <!-- Load non-critical CSS async -->
+    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
 
 </head>
 
@@ -382,7 +398,7 @@
                                 message += `*Message:* ${formData.message || 'None'}`;
                             
                                 // Open WhatsApp with pre-filled message
-                                window.open(`https://wa.me/8810051111?text=${encodeURIComponent(message)}`, '_blank');
+                                window.open(`https://wa.me/+918810051111?text=${encodeURIComponent(message)}`, '_blank');
                             }
                             </script>
                         </div>

@@ -1,0 +1,6 @@
+# Enable GitHub Pages caching
+remote_theme: pages-themes/slate@v0
+cache:
+  directories:
+    - node_modules
+    - _site

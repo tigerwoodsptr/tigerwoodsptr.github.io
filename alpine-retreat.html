@@ -18,6 +18,21 @@
     <link href="css/coloring.css" rel="stylesheet" type="text/css" >
     <!-- color scheme -->
     <link id="colors" href="css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+    <!-- Enable browser caching using Cloudflare (Free CDN) -->
+    <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">
+    <style>
+    /* Inline critical CSS */
+    body { font-family: sans-serif; margin: 0; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    /* Add more critical styles here */
+    </style>
+    
+    <!-- Load non-critical CSS async -->
+    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
 
 </head>
 
@@ -470,6 +485,32 @@
                                 </form>
                             </div>
                         </div>
+                        <script>
+                            function sendViaWhatsApp() {
+                                const form = document.getElementById('bookingForm');
+                                const formData = new FormData(form);
+                                
+                                // Extract values
+                                const date = formData.get('date');
+                                const adults = formData.get('adults');
+                                const children = formData.get('children');
+                                const rooms = formData.get('rooms');
+                                const extraBeds = formData.get('extra_beds');
+                                const services = formData.getAll('service');
+                            
+                                // Compose message
+                                let message = `*New Booking Request*%0A%0A`; // Using %0A for new lines
+                                message += `*Date:* ${date}%0A`;
+                                message += `*Adults:* ${adults}%0A`;
+                                message += `*Children:* ${children}%0A`;
+                                message += `*Rooms:* ${rooms}%0A`;
+                                message += `*Extra Beds:* ${extraBeds}%0A`;
+                                message += `*Services:* ${services.join(', ') || 'None'}`;
+                            
+                                // Send via WhatsApp
+                                window.open(`https://wa.me/+918810051111?text=${message}`, '_blank');
+                            }
+                            </script>
                     </div>
                 </div>
             </section>

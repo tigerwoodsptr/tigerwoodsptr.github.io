@@ -1,22 +1,24 @@
 #!/bin/bash
 
-# Check if jpegoptim is installed
-if ! command -v jpegoptim &> /dev/null; then
-    echo "Error: jpegoptim is not installed. Install it using 'sudo apt install jpegoptim' or 'brew install jpegoptim'."
-    exit 1
-fi
+# Quick Optimizer for GitHub Pages
+# Run this in your repository root
 
-# Directory to search for images (default: current directory)
-DIR="${1:-.}"
+# Install required tools
+sudo apt-get install -y jpegoptim optipng pngquant webp ffmpeg
 
-# Find and optimize JPEG/JPG images recursively
-find "$DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" \) | while read -r img; do
-    echo "Optimizing: $img"  # Print image location
+# Optimize JPG
+find . -type f -size +100k \( -iname "*.jpg" -o -iname "*.jpeg" \) -exec jpegoptim -m85 -p --strip-all {} \;
 
-    # Apply lossless compression while keeping the original format
-    jpegoptim --strip-all --max=85 "$img"
+# Optimize PNG
+find . -type f -size +100k -iname "*.png" -exec optipng -o7 -strip all {} \;
 
-    echo "Optimized: $img"
+# Convert to WebP (modern format)
+find . -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -exec cwebp -q 85 -m 6 -pass 3 -mt {} -o {}.webp \;
+
+# Replace originals with WebP
+find . -name "*.webp" | while read file; do
+    original="${file%.webp}"
+    mv "$file" "$original"
 done
 
-echo "All images optimized successfully!"
+echo "Optimization complete! Don't forget to git commit and push!"
