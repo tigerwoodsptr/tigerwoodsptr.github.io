@@ -587,18 +587,27 @@
                 
                 <style>
                 .modal-backdrop.show { opacity: 0.9 !important; }
+                .carousel-item {
+                    position: relative;
+                    text-align: center;
+                }
+
+                .carousel-item img {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                }
+
                 .carousel-caption {
-                    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+                    position: static; /* Removes absolute positioning */
+                    background: rgba(0, 0, 0, 0.7);
                     padding: 1rem;
                     border-radius: 5px;
-                    position: absolute; /* Ensure it's positioned absolutely within the carousel item */
-                    bottom: 0; /* Position at the bottom of the image */
-                    left: 50%; /* Center horizontally */
-                    transform: translateX(-50%); /* Adjust for centering */
-                    width: 100%; /* Full width of the image */
-                    text-align: center; /* Center-align text */
-                    margin: 0; /* Remove any default margin */
+                    text-align: center;
+                    width: 100%;
+                    color: white;
                 }
+
                 
                 /* Fixed Arrow Styling */
                 /* .carousel-control-prev,
@@ -688,44 +697,64 @@
             </section>
             
             
-            <section class="jarallax relative overflow-hidden text-light section-dark" data-video-src="mp4:video/tiger-safari-2.mp4">
-                <div class="container">
+            <section class="relative overflow-hidden text-light section-dark">
+                <!-- Background Video -->
+                <video autoplay muted loop playsinline class="w-100 position-absolute top-0 start-0">
+                    <source src="video/tiger-safari2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            
+                <!-- Content -->
+                <div class="container position-relative z-1">
                     <div class="row justify-content-center">
                         <div class="col-lg-8 text-center">
                             <div class="owl-single-dots owl-carousel owl-theme">
                                 <div class="item">
                                     <i class="icofont-quote-left id-color fs-40 mb-4 wow fadeInUp"></i>
-                                    <h3 class="mb-4 wow fadeInUp fs-32">Experience unparalleled luxury and personalized service at Tiger Wood, where every stay is a journey into sophistication, comfort, and unforgettable memories.</h3>
+                                    <h3 class="mb-4 wow fadeInUp fs-32">
+                                        Experience unparalleled luxury and personalized service at Tiger Wood, 
+                                        where every stay is a journey into sophistication, comfort, and unforgettable memories.
+                                    </h3>
                                     <span class="wow fadeInUp">Aditya Kumar</span>
                                 </div>
-
+            
                                 <div class="item">
                                     <i class="icofont-quote-left id-color fs-40 mb-4 wow fadeInUp"></i>
-                                    <h3 class="mb-4 wow fadeInUp fs-32 lh-1-5">Nature lovers will adore this resort, with its peaceful surroundings and modern amenities. The Majestic Roar Restaurant impressed us with its delicious food and immersive setting.</h3>
+                                    <h3 class="mb-4 wow fadeInUp fs-32 lh-1-5">
+                                        Nature lovers will adore this resort, with its peaceful surroundings and modern amenities. 
+                                        The Majestic Roar Restaurant impressed us with its delicious food and immersive setting.
+                                    </h3>
                                     <span class="wow fadeInUp">Chandrabhan Singh</span>
                                 </div>
-
+            
                                 <div class="item">
                                     <i class="icofont-quote-left id-color fs-40 mb-4 wow fadeInUp"></i>
-                                    <h3 class="mb-4 wow fadeInUp fs-32 lh-1-5">A tranquil and enchanting trail that takes you through the heart of nature, offering peace and solitude. Every step on the Whispering Wilderness Path immerses you in the serene beauty of the wilderness.</h3>
+                                    <h3 class="mb-4 wow fadeInUp fs-32 lh-1-5">
+                                        A tranquil and enchanting trail that takes you through the heart of nature, offering peace and solitude. 
+                                        Every step on the Whispering Wilderness Path immerses you in the serene beauty of the wilderness.
+                                    </h3>
                                     <span class="wow fadeInUp">Arpit Singh</span>
                                 </div>
-
-                                <!-- <div class="item">
-                                    <i class="icofont-quote-left id-color fs-40 mb-4 wow fadeInUp"></i>
-                                    <h3 class="mb-4 wow fadeInUp fs-32 lh-1-5">Experience unparalleled luxury and personalized service at Almaris Hotel, where every stay is a journey into sophistication, comfort, and unforgettable memories.</h3>
-                                    <span class="wow fadeInUp">Donette Fondren</span>
-                                </div> -->
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <img src="images-mountain-hotel/misc/leaf-rt.webp" class="w-20 abs end-0 top-0 z-2" alt="">
-                <img src="images-mountain-hotel/misc/leaf-lt.webp" class="w-20 abs start-0 top-0 z-2" alt="">
-
+            
+                <!-- Decorative Leaves -->
+                <img src="images-mountain-hotel/misc/leaf-rt.webp" class="w-20 abs end-0 top-0 z-2" alt="Leaf Right">
+                <img src="images-mountain-hotel/misc/leaf-lt.webp" class="w-20 abs start-0 top-0 z-2" alt="Leaf Left">
+            
+                <!-- Dark Overlay for Better Visibility -->
                 <div class="de-overlay"></div>
             </section>
+            
+            <!-- Fallback for iPhones -->
+            <script>
+                if (navigator.userAgent.match(/(iPad|iPhone|iPod)/g)) {
+                    document.querySelector("video").remove();
+                }
+            </script>
+            
 
         </div>
         <!-- content close -->
