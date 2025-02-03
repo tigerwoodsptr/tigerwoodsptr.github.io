@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilibhit Tiger Reserve - Attractions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <style>
+        .carousel-item {
+            height: 600px;
+        }
+        .carousel-item img {
+            height: 100%;
+            object-fit: cover;
+        }
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+        }
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: rgba(0,0,0,0.5);
+            border-radius: 50%;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Main Carousel -->
+<div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="3"></button>
+        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="4"></button>
+        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="5"></button>
+        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="6"></button>
+        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="7"></button>
+        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="8"></button>
+    </div>
+
+    <div class="carousel-inner">
+        <!-- Chuka Beach -->
+        <div class="carousel-item active">
+            <img src="https://pilibhittigerreserve.in/images/h3.jpeg" class="d-block w-100" alt="Chuka Beach">
+            <div class="carousel-caption">
+                <h5>Chuka Beach</h5>
+                <p>Beautiful tourist destination with bamboo huts and tree houses. Best visited between October and April.</p>
+            </div>
+        </div>
+
+        <!-- Siphon Canal Point -->
+        <div class="carousel-item">
+            <img src="https://pilibhittigerreserve.in/images/river1.jpeg" class="d-block w-100" alt="Siphon Canal">
+            <div class="carousel-caption">
+                <h5>Siphon Canal Point</h5>
+                <p>Unique system of two canals flowing one above the other - Kharja Canal and Khiri Branch.</p>
+            </div>
+        </div>
+
+        <!-- Sunset Point -->
+        <div class="carousel-item">
+            <img src="https://pilibhittigerreserve.in/images/pilibhit10.jpeg" class="d-block w-100" alt="Sunset Point">
+            <div class="carousel-caption">
+                <h5>Sunset Point</h5>
+                <p>Perfect spot for photographers to capture picturesque frames at dusk.</p>
+            </div>
+        </div>
+
+        <!-- Jhand Taal -->
+        <div class="carousel-item">
+            <img src="https://pilibhittigerreserve.in/images/images_1.jpeg" class="d-block w-100" alt="Jhand Taal">
+            <div class="carousel-caption">
+                <h5>Jhand Taal</h5>
+                <p>Scenic pool named after local vegetation, located on Mahof-Barahi range border.</p>
+            </div>
+        </div>
+
+        <!-- Lal Pul -->
+        <div class="carousel-item">
+            <img src="https://pilibhittigerreserve.in/images/s12.jpg" class="d-block w-100" alt="Lal Pul">
+            <div class="carousel-caption">
+                <h5>Lal Pul</h5>
+                <p>Historic red clay bridge built during British period on Sharda Canal.</p>
+            </div>
+        </div>
+
+        <!-- Barahasinga Tal -->
+        <div class="carousel-item">
+            <img src="https://pilibhittigerreserve.in/images/s13.jpg" class="d-block w-100" alt="Barahasinga Tal">
+            <div class="carousel-caption">
+                <h5>Barahasinga Tal</h5>
+                <p>Marshy grassland frequented by swamp deer (Barasingha).</p>
+            </div>
+        </div>
+
+        <!-- Crocodile Point -->
+        <div class="carousel-item">
+            <img src="https://pilibhittigerreserve.in/images/s10.jpg" class="d-block w-100" alt="Crocodile Point">
+            <div class="carousel-caption">
+                <h5>Crocodile Point</h5>
+                <p>Prime location for observing marsh crocodiles in their natural habitat.</p>
+            </div>
+        </div>
+
+        <!-- Sapt Sarovar -->
+        <div class="carousel-item">
+            <img src="https://pilibhittigerreserve.in/images/pilibhit24.jpeg" class="d-block w-100" alt="Sapt Sarovar">
+            <div class="carousel-caption">
+                <h5>Sapt Sarovar</h5>
+                <p>Seven-step waterfall surrounded by Sal and Teak trees.</p>
+            </div>
+        </div>
+
+        <!-- Bhim Tal -->
+        <div class="carousel-item">
+            <img src="https://pilibhittigerreserve.in/images/bhimtal.jpeg" class="d-block w-100" alt="Bhim Tal">
+            <div class="carousel-caption">
+                <h5>Bhim Tal</h5>
+                <p>Scenic lake with central island offering panoramic natural views.</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Enable carousel auto-cycling
+    const myCarousel = new bootstrap.Carousel(document.getElementById('mainCarousel'), {
+        interval: 5000,
+        wrap: true
+    });
+</script>
+
+</body>
+</html>
