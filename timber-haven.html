@@ -274,6 +274,7 @@
             <div id="top"></div>
 
             <!-- Include Fancybox CSS & JS -->
+            <!-- Include Fancybox CSS & JS -->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/4.0.31/fancybox.min.css" />
             <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/4.0.31/fancybox.umd.min.js"></script>
 
@@ -313,6 +314,17 @@
                     </div>
                 </div>
             </section>
+
+            <script>
+                Fancybox.bind("[data-fancybox='gallery']", {
+                    Toolbar: true,         // Show toolbar with navigation arrows
+                    closeButton: "top",     // Close button position
+                    wheel: "slide",         // Enable mouse wheel navigation
+                    dragToClose: true,      // Allow dragging to close
+                    infinite: true          // Enable looping through images
+                });
+            </script>
+
 
 
             <section>
