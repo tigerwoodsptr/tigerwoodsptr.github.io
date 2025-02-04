@@ -515,27 +515,9 @@
                                     
                                     <div class="spacer-single"></div>
                                     
-                                    <!-- <div>
-                                        <h3>Extra Services</h3>
-                                        <fieldset>
-                                            <label>
-                                                <input type="checkbox" name="service" value="spa_services"> Spa Services 
-                                            </label><br>
-                                            <label>
-                                                <input type="checkbox" name="service" value="sauna_steam_room"> Sauna/Steam Room 
-                                            </label><br>
-                                            <label>
-                                                <input type="checkbox" name="service" value="laundry"> Laundry and Dry Cleaning 
-                                            </label><br>
-                                            <label>
-                                                <input type="checkbox" name="service" value="pet_friendly"> Pet-Friendly Amenities 
-                                            </label>
-                                        </fieldset>
-                                    </div> -->
-                                    
-                                    <div class="d-flex gap-3 mt-4">
-                                        <button type="submit" class="btn-main w-100">Book Your Stay</button>
-                                        <button type="button" class="btn-main w-100" onclick="sendViaWhatsApp()">
+                                    <div class="d-flex flex-column flex-md-row gap-3 mt-4">
+                                        <button type="submit" class="btn-main w-100 text-center">Book Your Stay</button>
+                                        <button type="button" class="btn-main w-100 text-center" onclick="sendViaWhatsApp()">
                                             Send via WhatsApp
                                         </button>
                                     </div>
@@ -543,35 +525,39 @@
                             </div>
                         </div>
                         
+                        <style>
+                            @media (max-width: 768px) {
+                                .btn-main {
+                                    font-size: 14px; /* Smaller font for mobile */
+                                    padding: 10px; /* Reduce padding to fit properly */
+                                }
+                            }
+                        </style>
+                        
                         <script>
-                        function sendViaWhatsApp() {
-                            const form = document.getElementById('bookingForm');
-                            const formData = new FormData(form);
-                            
-                            const name = formData.get('name');
-                            const email = formData.get('email');
-                            const contact = formData.get('contact');
-                            const date = formData.get('date');
-                            const adults = formData.get('adults');
-                            const children = formData.get('children');
-                            const rooms = formData.get('rooms');
-                            const extraBeds = formData.get('extra_beds');
-                            const services = formData.getAll('service');
+                            function sendViaWhatsApp() {
+                                let name = document.querySelector("input[name='name']").value;
+                                let contact = document.querySelector("input[name='contact']").value;
+                                let date = document.querySelector("input[name='date']").value;
+                                let adults = document.querySelector("input[name='adults']").value;
+                                let children = document.querySelector("input[name='children']").value;
+                                let rooms = document.querySelector("input[name='rooms']").value;
+                                let extraBeds = document.querySelector("input[name='extra_beds']").value;
                         
-                            let message = `*Timber Haven New Booking Request*%0A%0A`;
-                            message += `*Name:* ${name}%0A`;
-                            message += `*Email:* ${email}%0A`;
-                            message += `*Contact:* ${contact}%0A`;
-                            message += `*Date:* ${date}%0A`;
-                            message += `*Adults:* ${adults}%0A`;
-                            message += `*Children:* ${children}%0A`;
-                            message += `*Rooms:* ${rooms}%0A`;
-                            message += `*Extra Beds:* ${extraBeds}%0A`;
-                            message += `*Services:* ${services.join(', ') || 'None'}`;
+                                let message = `Hello, I would like to book a stay for Timber Haven. 
+                                Name: ${name}
+                                Contact: ${contact}
+                                Date: ${date}
+                                Adults: ${adults}
+                                Children: ${children}
+                                Rooms: ${rooms}
+                                Extra Beds: ${extraBeds}`;
                         
-                            window.open(`https://wa.me/+918810051111?text=${message}`, '_blank');
-                        }
+                                let whatsappURL = `https://wa.me/+918810051111?text=${encodeURIComponent(message)}`;
+                                window.open(whatsappURL, "_blank");
+                            }
                         </script>
+                        
                     </div>
                 </div>
             </section>

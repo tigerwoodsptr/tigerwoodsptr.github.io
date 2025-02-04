@@ -437,7 +437,7 @@
                                             <h3 class="mb-4">Reserve</h3>
                                         </div>
                                     </div>
-                                    
+                        
                                     <div class="row g-3">
                                         <div class="col-md-12">
                                             <h6 class="mb-2">Full Name</h6>
@@ -496,28 +496,11 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+                        
                                     <div class="spacer-single"></div>
-                                    
-                                    <!-- <div>
-                                        <h3>Extra Services</h3>
-                                        <fieldset>
-                                            <label>
-                                                <input type="checkbox" name="service" value="spa_services"> Spa Services 
-                                            </label><br>
-                                            <label>
-                                                <input type="checkbox" name="service" value="sauna_steam_room"> Sauna/Steam Room 
-                                            </label><br>
-                                            <label>
-                                                <input type="checkbox" name="service" value="laundry"> Laundry and Dry Cleaning 
-                                            </label><br>
-                                            <label>
-                                                <input type="checkbox" name="service" value="pet_friendly"> Pet-Friendly Amenities 
-                                            </label>
-                                        </fieldset>
-                                    </div> -->
-                                    
-                                    <div class="d-flex gap-3 mt-4">
+                        
+                                    <!-- Buttons Section -->
+                                    <div class="d-grid gap-3 mt-4">
                                         <button type="submit" class="btn-main w-100">Book Your Stay</button>
                                         <button type="button" class="btn-main w-100" onclick="sendViaWhatsApp()">
                                             Send via WhatsApp
@@ -527,35 +510,35 @@
                             </div>
                         </div>
                         
+                        <!-- WhatsApp Functionality -->
                         <script>
-                        function sendViaWhatsApp() {
-                            const form = document.getElementById('bookingForm');
-                            const formData = new FormData(form);
-                            
-                            const name = formData.get('name');
-                            const email = formData.get('email');
-                            const contact = formData.get('contact');
-                            const date = formData.get('date');
-                            const adults = formData.get('adults');
-                            const children = formData.get('children');
-                            const rooms = formData.get('rooms');
-                            const extraBeds = formData.get('extra_beds');
-                            const services = formData.getAll('service');
+                            function sendViaWhatsApp() {
+                                let name = document.querySelector('input[name="name"]').value;
+                                let email = document.querySelector('input[name="email"]').value;
+                                let contact = document.querySelector('input[name="contact"]').value;
+                                let date = document.querySelector('input[name="date"]').value;
+                                let adults = document.querySelector('input[name="adults"]').value;
+                                let children = document.querySelector('input[name="children"]').value;
+                                let rooms = document.querySelector('input[name="rooms"]').value;
+                                let extraBeds = document.querySelector('input[name="extra_beds"]').value;
                         
-                            let message = `*Alpine Retreat New Booking Request*%0A%0A`;
-                            message += `*Name:* ${name}%0A`;
-                            message += `*Email:* ${email}%0A`;
-                            message += `*Contact:* ${contact}%0A`;
-                            message += `*Date:* ${date}%0A`;
-                            message += `*Adults:* ${adults}%0A`;
-                            message += `*Children:* ${children}%0A`;
-                            message += `*Rooms:* ${rooms}%0A`;
-                            message += `*Extra Beds:* ${extraBeds}%0A`;
-                            message += `*Services:* ${services.join(', ') || 'None'}`;
+                                let message = `Hello, I would like to make a reservation:
+                                \nName: ${name}
+                                \nEmail: ${email}
+                                \nContact: ${contact}
+                                \nDate: ${date}
+                                \nAdults: ${adults}
+                                \nChildren: ${children}
+                                \nRooms: ${rooms}
+                                \nExtra Beds: ${extraBeds}`;
                         
-                            window.open(`https://wa.me/+918810051111?text=${message}`, '_blank');
-                        }
+                                let whatsappNumber = "YOUR_NUMBER_HERE"; // Replace with your WhatsApp number (without + or spaces)
+                                let whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+                        
+                                window.open(whatsappURL, "_blank");
+                            }
                         </script>
+                        
                     </div>
                 </div>
             </section>
