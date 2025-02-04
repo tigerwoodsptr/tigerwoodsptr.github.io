@@ -275,7 +275,9 @@
 
             <!-- Include Fancybox CSS & JS -->
             <!-- Include Fancybox CSS & JS -->
-<!-- Include Fancybox CSS & JS -->
+
+
+                <!-- Fancybox CSS & JS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/4.0.31/fancybox.min.css" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/4.0.31/fancybox.umd.min.js"></script>
 
@@ -315,6 +317,25 @@
                 </div>
             </div>
         </section>
+
+        <script>
+            Fancybox.bind("[data-fancybox='gallery']", {
+                Toolbar: true,       
+                closeButton: "top",  
+                wheel: "slide",      
+                dragToClose: true,   
+                infinite: true,      
+                touch: true,         // Enable touch gestures
+                animated: true,      // Enable smooth animations
+                Carousel: {
+                    friction: 0.2,   // Allow smooth scrolling with fingers
+                    Panzoom: {
+                        touch: true, // Ensure pan and zoom work on touch screens
+                    },
+                }
+            });
+        </script>
+
 
 <!-- No extra JS needed! Fancybox auto-initializes -->
 
