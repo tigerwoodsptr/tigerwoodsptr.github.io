@@ -272,23 +272,44 @@
 
             <div id="top"></div>
 
+            <!-- Include Fancybox CSS & JS -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/4.0.31/fancybox.min.css" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/4.0.31/fancybox.umd.min.js"></script>
+
             <section class="pt80 sm-pt-40 no-bottom">
                 <div class="owl-custom-nav menu-float" data-target="#gallery-carousel">
                     <a class="btn-next"></a>
                     <a class="btn-prev"></a>                                
 
                     <div id="gallery-carousel" class="owl-3-cols-autowidth owl-carousel owl-theme">
-                        <img src="images/room-single/alpine-retreat.jpg" class="h-600px" alt="">
-                        <img src="images/room-single/alpine1.jpg" class="h-600px" alt="">
-                        <img src="images/room-single/alpine2.jpg" class="h-600px" alt="">
-                        <img src="images/room-single/alpine5.jpg" class="h-600px" alt="">
-                        <img src="images/room-single/room7.jpg" class="h-600px" alt="">
-                        <img src="images/room-single/alpine4.jpg" class="h-600px" alt="">
-                        <img src="images/room-single/alpine3.jpg" class="h-600px" alt="">
-                        <img src="images/room-single/room6.jpg" class="h-600px" alt="">
+                        <a href="images/room-single/alpine-retreat.jpg" data-fancybox="gallery">
+                            <img src="images/room-single/alpine-retreat.jpg" class="h-600px" alt="">
+                        </a>
+                        <a href="images/room-single/alpine1.jpg" data-fancybox="gallery">
+                            <img src="images/room-single/alpine1.jpg" class="h-600px" alt="">
+                        </a>
+                        <a href="images/room-single/alpine2.jpg" data-fancybox="gallery">
+                            <img src="images/room-single/alpine2.jpg" class="h-600px" alt="">
+                        </a>
+                        <a href="images/room-single/alpine5.jpg" data-fancybox="gallery">
+                            <img src="images/room-single/alpine5.jpg" class="h-600px" alt="">
+                        </a>
+                        <a href="images/room-single/room7.jpg" data-fancybox="gallery">
+                            <img src="images/room-single/room7.jpg" class="h-600px" alt="">
+                        </a>
+                        <a href="images/room-single/alpine4.jpg" data-fancybox="gallery">
+                            <img src="images/room-single/alpine4.jpg" class="h-600px" alt="">
+                        </a>
+                        <a href="images/room-single/alpine3.jpg" data-fancybox="gallery">
+                            <img src="images/room-single/alpine3.jpg" class="h-600px" alt="">
+                        </a>
+                        <a href="images/room-single/room6.jpg" data-fancybox="gallery">
+                            <img src="images/room-single/room6.jpg" class="h-600px" alt="">
+                        </a>
                     </div>
                 </div>
             </section>
+
 
             <section>
                 <div class="container">
@@ -461,7 +482,7 @@
                                     
                                     <div class="spacer-single"></div>
                                     
-                                    <div>
+                                    <!-- <div>
                                         <h3>Extra Services</h3>
                                         <fieldset>
                                             <label>
@@ -477,7 +498,7 @@
                                                 <input type="checkbox" name="service" value="pet_friendly"> Pet-Friendly Amenities 
                                             </label>
                                         </fieldset>
-                                    </div>
+                                    </div> -->
                                     
                                     <div class="d-flex gap-3 mt-4">
                                         <button type="submit" class="btn-main w-100">Book Your Stay</button>
@@ -576,6 +597,20 @@
     <script src="js/swiper.js"></script>
     <script src="js/custom-marquee.js"></script>
     <script src="js/custom-swiper-1.js"></script>
+    <script>
+        document.addEventListener('keydown', function (e) {
+          // Disable Ctrl+U (View Source)
+          if (e.ctrlKey && e.key === 'u') {
+            e.preventDefault();
+            alert('Viewing source is disabled.');
+          }
+          // Disable Ctrl+Shift+I (Developer Tools)
+          if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+            e.preventDefault();
+            alert('Developer tools are disabled.');
+          }
+        });
+      </script>
 
 </body>
 

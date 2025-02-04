@@ -147,6 +147,20 @@
         wrap: true
     });
 </script>
+<script>
+    document.addEventListener('keydown', function (e) {
+      // Disable Ctrl+U (View Source)
+      if (e.ctrlKey && e.key === 'u') {
+        e.preventDefault();
+        alert('Viewing source is disabled.');
+      }
+      // Disable Ctrl+Shift+I (Developer Tools)
+      if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+        e.preventDefault();
+        alert('Developer tools are disabled.');
+      }
+    });
+  </script>
 
 </body>
 </html>
