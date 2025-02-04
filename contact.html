@@ -290,57 +290,66 @@
             <section class="relative lines-deco">
                 <div class="container">
                     <div class="row g-4 justify-content-center">
-
                         <div class="col-lg-7">
                             <div class="text-center">
                                 <h3 class="mb-4">Write a Message</h3>
                             </div>
-                            
-                            <form name="contactForm" id="contact_form" class="position-relative z1000" method="post" action="#">
+            
+                            <form name="contactForm" id="contact_form" class="position-relative z1000">
                                 <div class="row gx-4">
                                     <div class="col-lg-6 col-md-6 mb10">
                                         <div class="field-set">
                                             <input type="text" name="Name" id="name" class="form-control" placeholder="Your Name" required>
                                         </div>
-
+            
                                         <div class="field-set">
-                                            <input type="text" name="Email" id="email" class="form-control" placeholder="Your Email" required>
+                                            <input type="email" name="Email" id="email" class="form-control" placeholder="Your Email" required>
                                         </div>
-
+            
                                         <div class="field-set">
-                                            <input type="text" name="phone" id="phone" class="form-control" placeholder="Your Phone" required>
+                                            <input type="text" name="Phone" id="phone" class="form-control" placeholder="Your Phone" required>
                                         </div>
                                     </div>
-                                    
+            
                                     <div class="col-lg-6 col-md-6">
                                         <div class="field-set mb20">
-                                            <textarea name="message" id="message" class="form-control" placeholder="Your Message" required></textarea>
+                                            <textarea name="Message" id="message" class="form-control" placeholder="Your Message" required></textarea>
                                         </div>
                                     </div>
                                 </div>
-                                    
-                                
+            
                                 <div class="text-center">
-                                    <!-- <div class="g-recaptcha d-inline-block " data-sitekey="copy-your-sitekey-here"></div> -->
-
-                                    <div id='submit' class="mt20 text-cen">
-                                        <input type='submit' id='send_message' value='Send Message' class="btn-main">
+                                    <div id="submit" class="mt20 text-cen">
+                                        <button type="button" id="send_message" class="btn-main" onclick="sendToWhatsApp()">Send via WhatsApp</button>
                                     </div>
                                 </div>
-
-                                <div id="success_message" class='success'>
-                                    Your message has been sent successfully. Refresh this page if you want to send more messages.
-                                </div>
-                                <div id="error_message" class='error'>
-                                    Sorry there was an error sending your form.
-                                </div>
                             </form>
-
                         </div>
-                        
                     </div>
                 </div>
-            </section>            
+            </section>
+            
+            <script>
+                function sendToWhatsApp() {
+                    let name = document.getElementById("name").value;
+                    let email = document.getElementById("email").value;
+                    let phone = document.getElementById("phone").value;
+                    let message = document.getElementById("message").value;
+            
+                    if (name === "" || email === "" || phone === "" || message === "") {
+                        alert("Please fill in all fields before sending.");
+                        return;
+                    }
+            
+                    let formattedMessage = `Hello, I would like to send a message:%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A*Message:* ${message}`;
+                    let phoneNumber = "+918810051111";  // Replace with your WhatsApp number (without + or spaces)
+            
+                    let whatsappURL = `https://wa.me/${phoneNumber}?text=${formattedMessage}`;
+            
+                    window.open(whatsappURL, "_blank");
+                }
+            </script>
+                        
 
         </div>
         <!-- content close -->
