@@ -255,59 +255,87 @@
             <style>
                 /* Mobile-first approach with image switching */
                 @media (max-width: 767px) {
-                  .swiper-inner {
-                    background-size: cover !important;
-                    background-position: center center !important;
-                    height: 100vh !important;
-                  }
-                  
-                  /* Mobile-specific images */
-                  .swiper-slide:nth-child(1) .swiper-inner {
-                    background-image: url(images-mountain-hotel/slider/tiger2_resized.jpg) !important;
-                  }
-                  
-                  .swiper-slide:nth-child(2) .swiper-inner {
-                    background-image: url(images-mountain-hotel/slider/tiger1_resized.jpeg) !important;
-                  }
-                
-                  /* Content adjustments */
-                  .sw-caption {
-                    height: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    padding: 20px;
-                  }
-                  
-                  .slider-title {
-                    font-size: 1.8rem !important;
-                    line-height: 1.2;
-                  }
-                  
-                  .slider-teaser {
-                    font-size: 0.9rem;
-                    margin-bottom: 1rem !important;
-                  }
-                  
-                  .btn-main {
-                    padding: 12px 24px;
-                    font-size: 0.9rem;
-                  }
-                  
-                  .spacer-double,
-                  .spacer-single,
-                  .spacer-30 {
-                    height: 20px !important;
-                  }
+                    .swiper-inner {
+                        background-size: cover !important;
+                        background-position: center center !important;
+                        height: 100vh !important;
+                    }
+
+                    /* Mobile-specific images */
+                    .swiper-slide:nth-child(1) .swiper-inner {
+                        background-image: url(images-mountain-hotel/slider/tiger2_resized.jpg) !important;
+                    }
+
+                    .swiper-slide:nth-child(2) .swiper-inner {
+                        background-image: url(images-mountain-hotel/slider/tiger1_resized.jpeg) !important;
+                    }
+
+                    /* Ensure the section fills the viewport height */
+                    .section-dark {
+                        min-height: 100vh;
+                    }
+
+                    /* Make swiper elements fill container height */
+                    .swiper,
+                    .swiper-wrapper,
+                    .swiper-slide {
+                        height: 100%;
+                    }
+
+                    /* Full-height background container */
+                    .swiper-inner {
+                        height: 100%;
+                        background-size: cover;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                    }
+
+                    /* Mobile optimization */
+                    @media (max-width: 768px) {
+                        .swiper-inner {
+                            background-position: top center; /* Adjust focus for mobile */
+                        }
+                    }
+
+                    /* Content adjustments */
+                    .sw-caption {
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 20px;
+                    }
+
+                    .slider-title {
+                        font-size: 1.8rem !important;
+                        line-height: 1.2;
+                    }
+
+                    .slider-teaser {
+                        font-size: 0.9rem;
+                        margin-bottom: 1rem !important;
+                    }
+
+                    .btn-main {
+                        padding: 12px 24px;
+                        font-size: 0.9rem;
+                    }
+
+                    .spacer-double,
+                    .spacer-single,
+                    .spacer-30 {
+                        height: 20px !important;
+                    }
                 }
-                
+
                 /* Desktop styles */
                 @media (min-width: 768px) {
-                  .swiper-inner {
-                    background-size: cover;
-                    height: 100vh;
-                  }
+                    .swiper-inner {
+                        background-size: cover;
+                        height: 100vh;
+                    }
                 }
+
                 </style>
                 
                 <section class="section-dark text-light no-top no-bottom position-relative overflow-hidden z-1000">
